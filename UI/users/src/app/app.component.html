@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>ANGULAR + ASP.NET CORE CRUD (ARGUS)</h1>
+  <div class="cards-container">
+    <div class="cards-form">
+      <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="">Name</label>
+          <input type="text" name="userName" [(ngModel)]="user.userName">
+        </div>
+        <div class="form-group">
+          <label for="">Surname</label>
+          <input type="text" name="userSurname" [(ngModel)]="user.userSurname">
+        </div>
+        <div class="form-group">
+          <label for="">Age</label>
+          <input type="text" name="userAge" [(ngModel)]="user.userAge">
+        </div>
+        <div class="form-group">
+          <button>Register</button>
+        </div>
+      </form>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card-row" *ngFor="let user of users">
+        <div class="card-row-details">
+          <span>{{user.userName}}</span>
+          <span>{{user.userSurname}}</span>
+          <span>{{user.userAge}}</span>
+        </div>
+        <div class="card-row-action">
+          <a><i class="fa-solid fa-trash-can"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
